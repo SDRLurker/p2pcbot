@@ -135,9 +135,9 @@ class DAO:
 
     def update_session(self, userid, set_dic):
         set_query, set_list = self.sub_query_from_dic(set_dic)
-        query = "UPDATE member SET %s WHERE userid=%%s" % set_query
-        vlist = set_list+[userid]
-        #print(query, vlist)
+        query = "INSERT INTO member SET gap=600, %s, userid=%%s ON DUPLICATE KEY UPDATE %s, userid=%%s" % (set_query, set_query)
+        vlist = set_list+[userid]+set_list+[userid]
+        print(query, vlist)
         cnx, cur = self.exec_query(query, vlist)
         cnx.commit()
         self.close(cnx, cur)
