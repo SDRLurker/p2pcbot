@@ -18,7 +18,7 @@ dao = DAO(msql)
 ALARM_TMPL = '''%s %s %.2f %s!
 %s'''
 REGISTER_TMPL = '''%s %s %s %s(이/가) 등록되었습니다.'''
-HELP_TMPL = '''[조건목록]\n%s
+HELP_TMPL = '''[도움말]\n%s
 ls
 조건목록을 확인합니다.
 rm 번호
@@ -54,11 +54,16 @@ def getLogger(name):
 
 def telegram_send_message(bot, chat_id, text):
     try:
-        bot.send_message(chat_id=chat_id, text=text)
+        print( bot.send_message(chat_id=chat_id, text=text) )
+    except telegram.error.Unauthorized as e:
+        where_dic = {'userid': chat_id}
+        dao.delete_condition(where_dic)
+        logger.error('telegram_send_message(%s,%s) : %s' % (chat_id,text,str(e)) )
+        print('telegram_send_message(%s,%s) : %s' % (chat_id,text,str(e)) )
     except Exception as e:
         # logger.error(traceback.format_exc())
         print(traceback.format_exc())
-        # logger.error('get_update : ' + str(e))
+        logger.error('telegram_send_message : ' + str(e))
         print('telegram_send_message : ' + str(e))
 
 def save_last_up():
