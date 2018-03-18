@@ -52,8 +52,9 @@ class Registry:
         # 20180127 명령어 오류시 데이터 저장하면 안됨!
         print(user_dic, cond_dic)
         if cond_dic == {}:
-            return False
+            msg = "%s 명령을 잘못 사용하였습니다." % cmd.split()[0]
+            return False, msg
 
         dao.set_member(user_dic)
-        dao.insert_condition(cond_dic)
-        return True
+        is_insert, msg = dao.insert_condition(cond_dic)
+        return is_insert, msg

@@ -215,8 +215,8 @@ def get_update(bot):
             if text.lower().startswith(tuple(CHECK_DIC.keys())):
                 registry = Registry(chat_id)
                 user_dict, cmd_dict = registry.proc_cmd(text)
-                if not registry.save_data(text, dao):
-                    msg = "%s 명령을 잘못 사용하였습니다." % text.split()[0]
+                is_success, msg = registry.save_data(text, dao)
+                if not is_success:
                     telegram_send_message(bot, chat_id, msg)
                     plus_update_id(u)
                     continue

@@ -29,7 +29,7 @@ class CmdTest(unittest.TestCase):
         registry = Registry('test')
         registry.save_data("% BTG 1", dao)
         self.assertEqual(dao.get_member('test'), [('test', 600, None, None)])
-        self.assertEqual(dao.get_conditions(), [('test', 1, 'BTG', None, '%', 1.0, datetime.datetime(1000, 1, 1, 0, 0))])
+        self.assertEqual(dao.get_conditions(), [('test', 1, 'BTG', '%', 1.0)])
 
     def tearDown(self):
         dao = DAO(self.dsn)

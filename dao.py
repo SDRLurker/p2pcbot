@@ -82,9 +82,15 @@ class DAO:
         return members
 
     def insert_condition(self, cond_dic):
-        query = "SELECT MAX(id) FROM conditions"
-        cnx, cur = self.exec_query(query)
+        userid =  cond_dic.get('userid', '')
+        if userid == '':
+            return False, "userid가 정의되지 않았습니다."
+        query = "SELECT MAX(id), count(*) AS c FROM conditions WHERE userid=%s"
+        print(query)
+        cnx, cur = self.exec_query(query, (userid,))
         rows = cur.fetchall()
+        if rows[0][1] >= 15:
+            return False, "알림 조건은 최대 15개 까지 설정 가능합니다."
         cid = 1
         if rows[0][0]:
             cid = rows[0][0] + 1
@@ -102,6 +108,7 @@ class DAO:
         cnx, cur = self.exec_query(query, vlist)
         cnx.commit()
         self.close(cnx, cur)
+        return True, ""
 
     def update_condition(self, set_dic, where_dic):
         set_query, set_list = self.sub_query_from_dic(set_dic)
