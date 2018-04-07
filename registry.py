@@ -32,6 +32,7 @@ class Registry:
         for i, f in enumerate(fields):
             if i == 0:
                 cond_dic['userid'] = self.id
+                f = f.lower()
                 kind = f if f in KINDS else ""
             elif i == 1:
                 self.currency = f
