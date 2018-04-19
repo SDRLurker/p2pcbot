@@ -1,7 +1,7 @@
 KINDS = ('%', 'cu', 'cd')
 ALLOWED_CURRENCY = (
     'BTC', 'ETH', 'DASH', 'LTC', 'ETC', 'XRP', 'BCH', 'XMR',
-    'ZEC', 'QTUM', 'BTG', 'EOS', 'ICX', 'VEN', 'TRX', 'ELF', 'MITH'
+    'ZEC', 'QTUM', 'BTG', 'EOS', 'ICX', 'VEN', 'TRX', 'ELF', 'MITH', 'MCO'
 )
 
 class Registry:
