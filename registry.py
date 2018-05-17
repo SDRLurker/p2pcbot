@@ -3,6 +3,7 @@ ALLOWED_CURRENCY = (
     'BTC', 'ETH', 'DASH', 'LTC', 'ETC', 'XRP', 'BCH', 'XMR',
     'ZEC', 'QTUM', 'BTG', 'EOS', 'ICX', 'VEN', 'TRX', 'ELF',
     'MITH', 'MCO', 'OMG', 'KNC', 'GNT', 'HSR', 'ZIL', 'ETHOS',
+    'PAY', 'WAX', 'POWR', 'LRC', 'GTO',
 )
 
 class Registry:
