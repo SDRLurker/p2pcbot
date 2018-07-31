@@ -167,6 +167,9 @@ def get_update(bot):
             msg = u.message
             if not u.message:
                 msg = u.edited_message
+            if not msg:
+                plus_update_id(u)
+                continue
             chat_id = msg.chat.id
             text = msg.text
             print(chat_id, text)
