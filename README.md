@@ -8,6 +8,12 @@
 
 텔레그램 아이디 : [p2pcoinbot](https://telegram.me/p2pcbot)
 
+## 웹서버
+
+이 프로그램은 웹서버 프로그램도 같이 실행해야 합니다.
+
+소스 저장소 : https://github.com/SDRLurker/p2pcbot2
+
 ## 사용법
 
 * set
