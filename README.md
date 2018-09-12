@@ -44,7 +44,7 @@
 ## 최초 DB 생성
 
 ```shell
-~/p2pcbot]$ mysql -hDB주소 -uDB사용자 DB명 < p2pcbot.sql
+~/p2pcbot]$ mysql -hDB주소 -uDB사용자 -p DB명 < p2pcbot.sql
 ```
 
 ## 설정파일 생성
