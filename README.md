@@ -41,14 +41,37 @@
 
 코인의 종가가 값 이하면 알려주는 조건을 등록합니다.
 
+## 최초 DB 생성
+
+```shell
+~/p2pcbot]$ mysql -hDB주소 -uDB사용자 DB명 < p2pcbot.sql
+```
+
+## 설정파일 생성
+
+```shell
+~/p2pcbot]$ vi config.py
+# -*- coding: utf-8 -*-
+my_token = '텔레그램 토큰키'
+
+web_host='웹서버주소'
+
+msql = {}
+msql['host'] = 'DB주소'
+msql['user'] = 'DB사용자'
+msql['password'] = 'DB비밀번호'
+msql['db'] = 'DB명'
+msql['charset'] = 'utf8'
+```
+
 ## 의존성 관리
 
 ```shell
-pip install -r requirements.txt
+~/p2pcbot]$ pip install -r requirements.txt
 ```
 
 ## 프로그램 실행
 
 ```shell
-./p2pcbot.py > /dev/null &
+~/p2pcbot]$ ./p2pcbot.py > /dev/null &
 ```
