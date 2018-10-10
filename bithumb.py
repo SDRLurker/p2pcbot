@@ -2,6 +2,7 @@
 import json
 import asyncio
 import requests
+import collections
 
 URL_TEMPL = "https://api.bithumb.com/public/ticker/%s"
 URL_ALL = "https://api.bithumb.com/public/ticker/ALL"
@@ -15,7 +16,7 @@ class Bithumb:
         self.url = URL_TEMPL % currency
 
     def get_ohlcs(self, data):
-        quote = {}
+        quote = collections.OrderedDict()
         try:
             quote['open'] = float(data['opening_price'])
             quote['high'] = float(data['max_price'])
@@ -25,7 +26,7 @@ class Bithumb:
             quote['rate'] = quote['change'] / quote['open'] * 100.0
         except Exception as e:
             print("get_ohlcs error", str(e))
-            quote = {}
+            quote = collections.OrderedDict()
         return quote
 
     def get_quote(self):
