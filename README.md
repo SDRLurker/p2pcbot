@@ -4,7 +4,7 @@
 
 가상화폐거래소 시세를 대략 매초마다 수신하여 원하는 시세 조건에 대해 알람메세지를 보냅니다.
 
-홈페이지 : http://p2pcbot.com:3000/
+홈페이지 : http://p2pcbot.ga:3000/
 
 텔레그램 아이디 : [p2pcoinbot](https://telegram.me/p2pcbot)
 
