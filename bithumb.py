@@ -35,7 +35,7 @@ class Bithumb:
 
     def get_quote(self):
         quote = {}
-        res = requests.get(self.url)
+        res = requests.get(self.url, timeout=10)
         quote_json = json.loads(res.text)
         if 'status' in quote_json and quote_json['status'] == '0000':
             quote = self.get_ohlcs(quote_json['data'])
