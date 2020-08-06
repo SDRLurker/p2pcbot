@@ -73,5 +73,5 @@ msql['charset'] = 'utf8'
 ## 프로그램 실행
 
 ```shell
-~/p2pcbot]$ ./p2pcbot.py > /dev/null &
+~/p2pcbot]$ ./p2pcbot.sh &
 ```
