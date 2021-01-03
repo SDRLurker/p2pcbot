@@ -56,8 +56,8 @@ def telegram_send_message(bot, chat_id, text):
     try:
         print( bot.send_message(chat_id=chat_id, text=text) )
     except telegram.error.Unauthorized as e:
-        where_dic = {'userid': chat_id}
-        dao.delete_condition(where_dic)
+        #where_dic = {'userid': chat_id}
+        #dao.delete_condition(where_dic)
         logger.error('telegram_send_message(%s,%s) : %s' % (chat_id,text,str(e)) )
         print('telegram_send_message(%s,%s) : %s' % (chat_id,text,str(e)) )
     except Exception as e:
