@@ -4,7 +4,7 @@ ALLOWED_CURRENCY = (
     'ZEC', 'QTUM', 'BTG', 'EOS', 'ICX', 'VEN', 'TRX', 'ELF',
     'MITH', 'MCO', 'OMG', 'KNC', 'GNT', 'HSR', 'ZIL', 'ETHOS',
     'PAY', 'WAX', 'POWR', 'LRC', 'GTO', 'STEEM', 'STRAT', 'ZRX',
-    'REP',
+    'REP', 'DOGE',
 )
 
 class Registry:
