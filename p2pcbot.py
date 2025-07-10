@@ -267,7 +267,7 @@ if __name__ == "__main__":
     bot = telegram.Bot(token=my_token)    # bot을 선언합니다.
 
     loop = asyncio.get_event_loop()
-    queue = asyncio.Queue(loop=loop)
+    queue = asyncio.Queue()
     for exch in exch_tuple:
         loop.create_task(produce(queue, bot, exch))
         loop.create_task(consume(queue, bot))
